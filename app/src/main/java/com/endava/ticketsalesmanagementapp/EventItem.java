@@ -3,6 +3,15 @@ package com.endava.ticketsalesmanagementapp;
 import java.time.LocalDate;
 
 public class EventItem {
+    public EventItem(String name, String description, String category, String location, Double price, LocalDate date) {
+        this.name = name;
+        this.description = description;
+        this.category = category;
+        Location = location;
+        this.price = price;
+        this.date = date;
+    }
+
     public String name;
     public String description;
     public String category;
@@ -42,16 +51,16 @@ public class EventItem {
         Location = location;
     }
 
-    public CharSequence getPrice() {
-        return price;
+    public String getPrice() {
+        return price.toString();
     }
 
     public void setPrice(Double price) {
         this.price = price;
     }
 
-    public CharSequence getDate() {
-        return date;
+    public String getDate() {
+        return date.toString();
     }
 
     public void setDate(LocalDate date) {

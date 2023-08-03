@@ -78,5 +78,9 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder>{
         eventListener = listener;
     }
 
+    public List<EventItem> getEventItemList() {
+        return eventItemList;
+    }
+
 
 }

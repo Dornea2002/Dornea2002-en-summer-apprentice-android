@@ -12,4 +12,6 @@
     <color name="dark_beige">#E4DCCF</color>
     <color name="blue_navy">#7D9D9C</color>
     <color name="blue">#576F72</color>
+    <color name="grey">#B2B2B2</color>
+    <color name="blue_light">#579BB1</color>
 </resources>

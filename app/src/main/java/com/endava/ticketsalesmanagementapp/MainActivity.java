@@ -17,11 +17,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Button eventButton= findViewById(R.id.button);
-        Intent intent= new Intent();
+        Button orderButton= findViewById(R.id.button4);
         eventButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(getApplicationContext(), EventActivity.class);
+                startActivity(intent);
+            }
+        });
+        orderButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getApplicationContext(), OrderActivity.class);
                 startActivity(intent);
             }
         });

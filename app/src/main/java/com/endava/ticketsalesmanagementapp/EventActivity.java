@@ -66,7 +66,7 @@ public class EventActivity extends AppCompatActivity {
     }
 
     private void showSortDialog() {
-        String[] options = {"Sort by Name", "Sort by Price"};
+        String[] options = {"Sort by Name", "Sort by Price", "Sort by Date"};
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Choose Sorting Method")
                 .setItems(options, new DialogInterface.OnClickListener() {
@@ -75,6 +75,9 @@ public class EventActivity extends AppCompatActivity {
                             sortByName();
                         } else if (which == 1) {
                             sortByPrice();
+                        }
+                        else if(which==2){
+                            sortByDate();
                         }
                     }
                 });
@@ -96,6 +99,16 @@ public class EventActivity extends AppCompatActivity {
             @Override
             public int compare(EventItem o1, EventItem o2) {
                 return o1.getPrice().compareTo(o2.getPrice());
+            }
+        });
+        eventAdapter.notifyDataSetChanged(); // Refresh the RecyclerView
+    }
+
+    private void sortByDate() {
+        eventAdapter.getEventItemList().sort(new Comparator<EventItem>() {
+            @Override
+            public int compare(EventItem o1, EventItem o2) {
+                return o1.getDate().compareTo(o2.getDate());
             }
         });
         eventAdapter.notifyDataSetChanged(); // Refresh the RecyclerView

@@ -67,7 +67,7 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder>{
             category.setText(eventItem.getCategory());
             location.setText(eventItem.getLocation());
             price.setText(eventItem.getPrice());
-            date.setText(eventItem.getDate());
+            date.setText(eventItem.getDateString());
         }
     }
     public interface OnMyItemClickListener{

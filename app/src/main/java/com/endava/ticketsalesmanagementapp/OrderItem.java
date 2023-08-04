@@ -42,19 +42,27 @@ public class OrderItem {
         this.numberOfTickets = numberOfTickets;
     }
 
-    public String getTotalPrice() {
+    public String getTotalPriceString() {
         return totalPrice.toString();
+    }
+
+    public Double getTotalPrice() {
+        return totalPrice;
     }
 
     public void setTotalPrice(Double totalPrice) {
         this.totalPrice = totalPrice;
     }
 
-    public String getOrderedAt() {
+    public String getOrderedAtString() {
         return orderedAt.toString();
+    }
+    public LocalDate getOrderedAt() {
+        return orderedAt;
     }
 
     public void setOrderedAt(LocalDate orderedAt) {
         this.orderedAt = orderedAt;
     }
+
 }

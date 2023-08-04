@@ -9,7 +9,6 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.time.LocalDate;
 import java.util.List;
 
 public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder> {
@@ -46,7 +45,6 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder> 
         public TextView totalPrice;
         public TextView orderedAt;
         public CardView cardView;
-
         public ViewHolder(@NonNull View itemView){
             super(itemView);
             id=itemView.findViewById(R.id.textView3);
@@ -55,16 +53,16 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder> 
             totalPrice=itemView.findViewById(R.id.textView8);
             orderedAt=itemView.findViewById(R.id.textView4);
             cardView=itemView.findViewById(R.id.cardView);
-
         }
 
         private void bind(OrderItem orderItem){
             cardView.setOnClickListener(v -> orderListener.onMyItemClickListener());
-            id.setText(orderItem.getId());
-            ticketCategory.setText(orderItem.getTicketCategory());
-            numberOfTickets.setText(orderItem.getNumberOfTickets());
-            totalPrice.setText(orderItem.getTotalPrice());
-            orderedAt.setText(orderItem.getOrderedAt());
+            id.setText("Order id: " + String.valueOf(orderItem.getId()));
+            ticketCategory.setText("Category: " + orderItem.getTicketCategory());
+            numberOfTickets.setText(String.valueOf("Number of tikcets: " + orderItem.getNumberOfTickets())); // Convert to string
+            totalPrice.setText("Total price: " + orderItem.getTotalPriceString());
+            orderedAt.setText("Order date: " + orderItem.getOrderedAtString());
+
         }
     }
     public interface OnMyItemClickListener{

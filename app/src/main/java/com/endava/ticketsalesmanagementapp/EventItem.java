@@ -59,8 +59,12 @@ public class EventItem {
         this.price = price;
     }
 
-    public String getDate() {
+    public String getDateString() {
         return date.toString();
+    }
+
+    public LocalDate getDate(){
+        return date;
     }
 
     public void setDate(LocalDate date) {
